@@ -7,6 +7,3 @@ configmap:
   data:
     CUSTOM_HEADER: 'Hello world!'
 
-image:
-  name: devopsjourney1/mywebapp
-  tag: latest
