@@ -1,3 +1,1 @@
-app.py
-Dockerfile
-requirements.txt
+flaskapp/
