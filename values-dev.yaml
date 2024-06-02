@@ -1,0 +1,6 @@
+
+replicas: 5
+
+configmap:
+  data:
+    CUSTOM_HEADER: 'Hello world! (dev)'
