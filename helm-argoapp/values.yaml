@@ -7,3 +7,6 @@ configmap:
   data:
     CUSTOM_HEADER: 'Hello world!'
 
+image:
+  name: yingci56/dockerhub
+  tag: argoapp
