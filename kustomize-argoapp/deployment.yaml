@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: argo-deployment
+  name: hello-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: webapp
+      app: test-webapp
     metadata:
       labels:
-        app: webapp
+        app: test-webapp
     spec:
       containers:
       - name: webserver-argo
