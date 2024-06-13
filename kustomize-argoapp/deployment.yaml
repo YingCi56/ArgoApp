@@ -1,16 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mywebapp
+  name: simple-deployment
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: trivial-go-web-app
   template:
-    spec: # Pod spec
+    metadata:
+      labels:
+        app: trivial-go-web-app
+    spec:
       containers:
-      - name: mycontainer
-        image: "yingci56/dockerhub:argoapp"
+      - name: webserver-simple
+        image: yingci56/dockerhub:argoapp
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         envFrom:
         - configMapRef:
             name: mykustom-map
