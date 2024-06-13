@@ -17,9 +17,6 @@ spec:
         image: yingci56/dockerhub:argoapp
         ports:
         - containerPort: 8080
-        envFrom:
-        - configMapRef:
-            name: mykustom-map
         resources:
           requests:
             memory: "16Mi" 
