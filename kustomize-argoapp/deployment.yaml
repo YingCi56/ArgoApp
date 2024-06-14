@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-deployment
+  name: simple-deployment
 spec:
   replicas: 1
   selector:
@@ -13,14 +13,7 @@ spec:
         app: trivial-go-web-app
     spec:
       containers:
-      - name: webserver-argo
-        image: yingci56/dockerhub:argoapp
+      - name: webserver-simple
+        image: docker.io/kostiscodefresh/simple-web-app:3d9b390
         ports:
         - containerPort: 8080
-        resources:
-          requests:
-            memory: "16Mi" 
-            cpu: "50m"    # 500milliCPUs (1/2 CPU)
-          limits:
-            memory: "128Mi"
-            cpu: "100m"
