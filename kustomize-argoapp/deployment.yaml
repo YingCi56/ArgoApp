@@ -6,10 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: test-webapp
+      app: trivial-go-web-app
+  template:
     metadata:
       labels:
-        app: test-webapp
+        app: trivial-go-web-app
     spec:
       containers:
       - name: webserver-argo
