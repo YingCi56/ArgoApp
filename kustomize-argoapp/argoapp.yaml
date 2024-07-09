@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Application
+metadata:
+  name: mywebapp
+  namespace: default
+spec:
+  destination:
+    server: https://kubernetes.default.svc  # Replace with your Kubernetes API server URL
+    namespace: default  # Target namespace for deployment
+  source:
+    repoURL: https://github.com/YingCi56/ArgoApp  # HTTPS URL of your private Git repository
+    targetRevision: HEAD
+    path: kustomize-argoapp
+    syncPolicy:
+      automated:
+        prune: true
+    auth:
+       git:
+        usernameSecret:
+           name: argocd-git-secret
+           key: token
